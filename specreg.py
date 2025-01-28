@@ -42,7 +42,6 @@ class SpectralRegularizer(nn.Module):
                     reg_loss += (w_norm**(2 * self.k))
                   
             if b is not None:
-                # The "spectral norm" of a vector is its L2 norm
                 b_norm = torch.norm(b, 2)
                 # => (||b||_2^(2k)).
                 reg_loss += (b_norm**(2 * self.k))
